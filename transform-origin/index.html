@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform | Origin</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            border: 1px solid blue;
+        }
+
+        .container:hover .quad {
+            /*transform-origin: x y;*/
+            /*transform-origin: 50% 50%;*/
+            /*transform-origin: top;*/
+            /*transform-origin: bottom;*/
+            /*transform-origin: left;*/
+            /*transform-origin: right;*/
+            transform-origin: top left;
+            /*transform: skew(x,y);*/
+            /*transform: skew(45deg);*/
+            /*transform: skew(45deg, 45deg);*/
+            /*transform: skew(10deg, 10deg);*/
+            /*transform: rotateY(45deg);*/
+            transform: rotateZ(45deg);
+        }
+
+        .quad {
+            width: 200px;
+            height: 200px;
+            background-color: #7dc900;
+            margin: 20px;
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quad"></div>
+    </div>
+</body>
+</html>
