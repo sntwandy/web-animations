@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation | Challenge</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .text {
+            animation-name: fontsize, textRotate;
+            animation-duration: 3s;
+            /*animation-iteration-count: infinite;*/
+        }
+
+        @keyframes fontsize {
+            0% {
+                font-size: 16px;
+            }
+            50% {
+                font-size: 22px;
+            }
+            100% {
+                font-size: 16px;
+            }
+        }
+
+        @keyframes textRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bgchange {
+            0% {
+                background-color: rgb(216, 216, 216);
+            }
+            25% {
+                background-color: rgb(202, 202, 202);
+            }
+            50% {
+                background-color: rgb(180, 180, 180);
+            }
+            75% {
+                background-color: rgb(155, 155, 155);
+            }
+            100% {
+                background-color: rgb(121, 121, 121);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="container">
+        <p class="text">Hello World!</p>
+    </div>
+    <script>
+        const $container = document.getElementById('container');
+
+        $container.addEventListener('animationstart', (event) => {
+            $container.style.animationName = 'bgchange';
+            $container.style.animationDuration = '3s';
+        });
+
+        $container.addEventListener('animationend', (event) => {
+            if(event.animationName === 'bgchange'){
+                $container.style.animationName = null;
+                $container.style.animationDuration = null;
+            }
+        });
+    </script>
+</body>
+</html>
