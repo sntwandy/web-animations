@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS | Animate</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 600px;
+            border: 1px solid blue;
+        }
+
+        .ball {
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="ball" class="ball"></div>
+    </div>
+    <script>
+        const $ball = document.getElementById('ball');
+        //element.animate(keyframes = [], option = {});
+        $ball.animate([
+            // From
+            {
+                transform: 'translateX(0)'
+            },
+            // To
+            {
+                transform: 'translateX(500px)'
+            }
+        ], {
+            duration: 1000,
+            delay: 1000,
+            direction: 'normal',
+            easing: 'linear',
+            iterations: Infinity,
+            fill: 'forwards',
+            iterationStart: .5, // = 50%
+            //endDelay: 5000,
+        });
+    </script>
+</body>
+</html>
